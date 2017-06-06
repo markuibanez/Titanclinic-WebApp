@@ -295,7 +295,7 @@
 			<version>${hamcrest.version}</version>
 			<scope>test</scope>
 		</dependency>
-  
+
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
@@ -369,10 +369,10 @@
 		  <testResource>
 		  	<!-- declared explicitly so Spring config files can be placed next to their corresponding JUnit test class 
 		  		(see example with ValidatorTests) -->
-		    <directory>${project.basedir}/src/test/java/org/springframework/samples/petclinic/model</directory>
+		    <directory>${project.basedir}/src/test/java</directory>
 		  </testResource>
 		  <testResource>
-		    <directory>${project.basedir}/src/test/java/org/springframework/samples/petclinic/model</directory>
+		    <directory>${project.basedir}/src/test/resources</directory>
 		  </testResource>
 		</testResources>
 		<plugins>
@@ -396,7 +396,7 @@
 				<version>2.13</version>
 				<configuration>
 					<includes>
-						<include>**/OwnerTests.java</include>
+						<include>**/*Tests.java</include>
 					</includes>
 				</configuration>
 			</plugin>
