@@ -1,8 +1,7 @@
-org\springframework\samples\petclinic\model\ValidatorTests.class
-com\test\SeleniumTest\WebAppTest.class
-com\test\SeleniumTest\OwnerTests.class
+org\springframework\samples\petclinic\model\OwnerTests.class
 org\springframework\samples\petclinic\service\ClinicServiceJdbcTests.class
 org\springframework\samples\petclinic\web\VisitsViewTests.class
-org\springframework\samples\petclinic\service\ClinicServiceJpaTests.class
 org\springframework\samples\petclinic\service\AbstractClinicServiceTests.class
 org\springframework\samples\petclinic\service\ClinicServiceSpringDataJpaTests.class
+org\springframework\samples\petclinic\model\ValidatorTests.class
+org\springframework\samples\petclinic\service\ClinicServiceJpaTests.class
