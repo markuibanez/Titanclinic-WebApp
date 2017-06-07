@@ -1,0 +1,19 @@
+[INFO  - 2017-06-07T02:41:30.236Z] GhostDriver - Main - running on port 41573
+[INFO  - 2017-06-07T02:41:30.997Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-06-07T02:41:30.997Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - page.customHeaders:  - {}
+[INFO  - 2017-06-07T02:41:30.998Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-06-07T02:41:30.998Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d01583b0-4b2a-11e7-a541-a544374bf8d5
+[ERROR - 2017-06-07T02:41:42.706Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - page.onError - msg: TypeError: undefined is not an object (evaluating '$.fn.dataTableExt.aoFeatures')
+[ERROR - 2017-06-07T02:41:42.707Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - page.onError - stack:
+  (anonymous function) (http://localhost:9008/titanclinic/dandelion-assets/4c246a3cbe295ad04d48067f1ac8cb6fea8eae08/dandelion-datatables-0.10.0.js:30)
+  fire (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:2913)
+  fireWith (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:3025)
+  ready (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:398)
+  completed (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:93)
+[ERROR - 2017-06-07T02:41:43.616Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - page.onError - msg: TypeError: undefined is not a constructor (evaluating 'oTable_vets.dataTable(oTable_vets_params)')
+[ERROR - 2017-06-07T02:41:43.616Z] Session [d01583b0-4b2a-11e7-a541-a544374bf8d5] - page.onError - stack:
+  (anonymous function) (http://localhost:9008/titanclinic/dandelion-assets/66a8ca643762ade0818ad19d527f20ced4b2358b/dandelion-datatables-0.10.0.js:17)
+  fire (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:2913)
+  fireWith (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:3025)
+  ready (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:398)
+  completed (http://localhost:9008/titanclinic/webjars/jquery/2.0.3/jquery.js:93)
