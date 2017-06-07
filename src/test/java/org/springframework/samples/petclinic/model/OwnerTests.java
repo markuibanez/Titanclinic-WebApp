@@ -1,59 +1,44 @@
-package com.test.SeleniumTest;
+/*
+ * Copyright 2002-2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.springframework.samples.petclinic.model;
 
-//import java.io.File;
-import java.io.IOException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-//import org.apache.commons.io.FileUtils;
-import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-//import org.openqa.selenium.OutputType;
-//import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.springframework.transaction.annotation.Transactional;
 
-
+/**
+ * JUnit test for the {@link Owner} class.
+ *
+ * @author Ken Krebs
+ */
 public class OwnerTests {
- WebDriver driver;
- 
- @Before
- public void setup() throws Exception {
-  //Set phantomjs.exe executable file path using DesiredCapabilities.
-  DesiredCapabilities capability = new DesiredCapabilities();  
-  capability.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "libs/phantomjs.exe");
-  driver = new PhantomJSDriver(capability);
-  //driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);  
- }
- 
- @Test
- public void phantomTest() throws IOException{
-  driver.get("http://localhost:9008/titanclinic/");
-  //Get current page title using javascript executor.
-    JavascriptExecutor javascript = (JavascriptExecutor) driver;
-    String pagetitle=(String)javascript.executeScript("return document.title");  
-    System.out.println("Functional Testing for "+pagetitle);    
-    
-	System.out.println("Successfully navigated to Homepage of Titanclinic");   
-    driver.navigate().to("http://localhost:9008/titanclinic/owners/find.html");
-    System.out.println("Successfully navigated to Find Titans Page of Titanclinic");  
-    driver.navigate().to("http://localhost:9008/titanclinic/owners.html?lastName=");
-    System.out.println("Successfully listed all Corps of Titanclinic");  
-    driver.navigate().to("http://localhost:9008/titanclinic/vets.html");
-    System.out.println("Successfully navigated to Find Corps page of Titanclinic");  
-    driver.navigate().to("http://localhost:9008/titanclinic/oups.html");
-    System.out.println("Successfully navigated to SC error page of Titanclinic"); 
-    driver.navigate().to("http://localhost:9008/titanclinic/#");
-    System.out.println("Successfully navigated to Help Page of Titanclinic");  
-    driver.navigate().to("http://localhost:9008/titanclinic/");
-    System.out.println("Successfully navigated back to Homepage of Titanclinic");
-    
-    
-  //  File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
- //   FileUtils.copyFile(scrFile, new File("C:/Users/marvin.j.a.salazar/Desktop/"),true);
 
-  
- }
+    @Test
+    @Transactional
+    public void testHasPet() {
+        Owner owner = new Owner();
+        Pet fido = new Pet();
+        fido.setName("Fido");
+        assertNull(owner.getPet("Fido"));
+        assertNull(owner.getPet("fido"));
+        owner.addPet(fido);
+        assertEquals(fido, owner.getPet("Fido"));
+        assertEquals(fido, owner.getPet("fido"));
+    }
+
 }
